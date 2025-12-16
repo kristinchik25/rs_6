@@ -1,0 +1,8 @@
+FROM python:3.9-alpine
+# Добавляем метку версии
+LABEL version="1.0"
+WORKDIR /code
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+COPY . .
+CMD ["python", "app.py"]
